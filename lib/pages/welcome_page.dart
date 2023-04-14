@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/widgets/app_large_text.dart';
 import 'package:travel_app/widgets/app_text.dart';
+import 'package:travel_app/widgets/responsive_btn.dart';
 
 import '../misc/app_colors.dart';
 
@@ -40,7 +41,13 @@ class _WelcomePageState extends State<WelcomePage> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        AppLargeText(text: 'Trips'),
+                        Row(
+                          children: [
+                            AppLargeText(text: 'Trips'),
+                            const SizedBox(width: 180),
+                            ResponsiveBtn(width: 100),
+                          ],
+                        ),
                         AppText(text: 'Beach', size: 40),
                         const SizedBox(height: 20),
                         Container(
@@ -52,6 +59,7 @@ class _WelcomePageState extends State<WelcomePage> {
                             size: 14,
                           ),
                         ),
+                        const SizedBox(height: 40),
                       ],
                     ),
                   ],

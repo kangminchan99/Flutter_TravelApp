@@ -62,6 +62,29 @@ class _WelcomePageState extends State<WelcomePage> {
                         const SizedBox(height: 40),
                       ],
                     ),
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 100),
+                        child: Column(
+                          children: List.generate(
+                            3,
+                            (indexDots) {
+                              return Container(
+                                margin: const EdgeInsets.only(bottom: 4),
+                                width: 8,
+                                height: index == indexDots ? 50 : 5,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(8),
+                                  color: index == indexDots
+                                      ? Colors.yellowAccent
+                                      : Colors.yellowAccent.withOpacity(0.4),
+                                ),
+                              );
+                            },
+                          ),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),

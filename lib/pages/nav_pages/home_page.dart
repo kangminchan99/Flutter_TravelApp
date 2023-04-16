@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:travel_app/misc/app_colors.dart';
 import 'package:travel_app/widgets/app_large_text.dart';
+import 'package:travel_app/widgets/app_text.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -61,14 +62,51 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             ),
           ),
           Container(
+            padding: const EdgeInsets.only(left: 20),
             width: double.maxFinite,
             height: 300,
             child: TabBarView(
               controller: _tabController,
               children: [
-                Text("Hi"),
+                ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 3,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      margin: const EdgeInsets.only(right: 15, top: 10),
+                      width: 200,
+                      height: 300,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.white,
+                        image: const DecorationImage(
+                          image: AssetImage("images/mexico_beach.jpeg"),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    );
+                  },
+                ),
                 Text("There"),
                 Text("Bye"),
+              ],
+            ),
+          ),
+          const SizedBox(height: 30),
+          Padding(
+            padding: const EdgeInsets.only(right: 20, left: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                AppLargeText(
+                  text: "Explore more",
+                  color: Colors.black,
+                  size: 22,
+                ),
+                AppText(
+                  text: "See all",
+                  color: AppColors.textColor1,
+                )
               ],
             ),
           ),

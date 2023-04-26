@@ -10,10 +10,11 @@ class AppCubits extends Cubit<CubitStates> {
   }
   final DataServices data;
   late final places;
-  void getData() {
+  void getData() async {
     try {
-      emit(LoadedState());
-      places = data.getInfo();
+      emit(LoadingState());
+      places = await data.getInfo();
+      emit(LoadedState(places));
     } catch (e) {}
   }
 }

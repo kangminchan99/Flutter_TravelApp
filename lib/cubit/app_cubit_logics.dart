@@ -6,6 +6,8 @@ import 'package:travel_app/pages/detail_page.dart';
 import 'package:travel_app/pages/home_page.dart';
 import 'package:travel_app/pages/welcome_page.dart';
 
+import '../pages/nav_pages/main_page.dart';
+
 class AppCubitLogics extends StatefulWidget {
   const AppCubitLogics({super.key});
 
@@ -26,7 +28,7 @@ class _AppCubitLogicsState extends State<AppCubitLogics> {
             return const WelcomePage();
           }
           if (state is LoadedState) {
-            return const HomePage();
+            return const MainPage();
           }
 
           if (state is LoadingState) {

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:travel_app/cubit/app_cubits.dart';
 import 'package:travel_app/misc/app_colors.dart';
 import 'package:travel_app/widgets/app_buttons.dart';
 import 'package:travel_app/widgets/app_large_text.dart';
@@ -42,7 +44,10 @@ class _DetailPageState extends State<DetailPage> {
               child: Row(
                 children: [
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      // go back
+                      BlocProvider.of<AppCubits>(context).goHome();
+                    },
                     icon: const Icon(
                       Icons.menu,
                       color: Colors.white,

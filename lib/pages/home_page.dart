@@ -95,7 +95,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                 color: Colors.white,
                                 image: DecorationImage(
                                   // 경로 확인하기
-                                  image: NetworkImage("http://mark.bslmeiyu.com/uploads/${info[index].img}"),
+                                  image: NetworkImage(
+                                      "http://mark.bslmeiyu.com/uploads/${info[index].img}"),
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -138,16 +139,19 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           margin: const EdgeInsets.only(right: 30),
                           child: Column(
                             children: [
-                              Container(
-                                width: 80,
-                                height: 80,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
-                                  color: Colors.white,
-                                  image: DecorationImage(
-                                    image: AssetImage(
-                                        "images/${image.keys.elementAt(index)}"),
-                                    fit: BoxFit.cover,
+                              GestureDetector(
+                                onTap: () {},
+                                child: Container(
+                                  width: 80,
+                                  height: 80,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    color: Colors.white,
+                                    image: DecorationImage(
+                                      image: AssetImage(
+                                          "images/${image.keys.elementAt(index)}"),
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ),
                               ),
